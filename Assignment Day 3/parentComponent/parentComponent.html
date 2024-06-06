@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Parent Component">
+        <div class="slds-m-around_medium">
+            <lightning-input
+                label="Enter some text"
+                value={inputValue}
+                onchange={handleInputChange}>
+            </lightning-input>
+            <c-child-component input-value={inputValue}></c-child-component>
+        </div>
+    </lightning-card>
+</template>

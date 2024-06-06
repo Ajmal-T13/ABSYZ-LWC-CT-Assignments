@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="Create Contact" icon-name="standard:contact">
+        <div class="slds-m-around_medium">
+            <lightning-combobox
+                name="account"
+                label="Select Account"
+                value={selectedAccount}
+                placeholder="Select an Account"
+                options={accountOptions}
+                onchange={handleAccountChange}>
+            </lightning-combobox>
+            
+            <lightning-input
+                name="lastName"
+                label="Last Name"
+                value={lastName}
+                onchange={handleInputChange}>
+            </lightning-input>
+
+            <lightning-input
+                name="title"
+                label="Title"
+                value={title}
+                onchange={handleInputChange}>
+            </lightning-input>
+
+            <lightning-input
+                name="email"
+                label="Email"
+                value={email}
+                onchange={handleInputChange}>
+            </lightning-input>
+
+            <lightning-input
+                name="phone"
+                label="Phone"
+                value={phone}
+                onchange={handleInputChange}>
+            </lightning-input>
+            <div class="slds-p-top_medium">
+                <div class="slds-align_absolute-center">
+            <lightning-button
+                variant="brand"
+                label="Save"
+                onclick={handleSave}
+                class="slds-m-left_x-small">
+            </lightning-button>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>
