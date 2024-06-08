@@ -1,0 +1,14 @@
+<template>
+        <lightning-card title="Contact Details">
+            <div class="slds-p-around_medium">
+            <ul>
+                <template for:each={contacts.data} for:item="contact">
+                    <li key={contact.Id}><b>•Contact Name:</b> {contact.Name}</li>
+                </template>
+                <template if:true={contacts.error}>
+                    <li>Error fetching Contact data</li>
+                </template>
+            </ul>
+        </div> 
+        </lightning-card>
+</template>
