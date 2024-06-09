@@ -1,0 +1,22 @@
+<template>
+    <div class="slds-p-horizontal_medium">
+    <div class="my-card slds-tabs_card">
+    <lightning-card>
+        <p>This is Child Component<br>
+            Click below Buttons for URL<br>
+        </p>
+        <lightning-button
+        variant="brand"
+          label="Absyz Link"
+          onclick={sendAbsyzLink}
+        ></lightning-button>
+        &nbsp;
+        <lightning-button
+            variant="brand"
+          label="Trailhead Link"
+          onclick={sendTrailheadLink}
+        ></lightning-button>
+      </lightning-card>
+    </div>
+    </div>
+</template>
