@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Create New Account" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Account Name" value={accountName} onchange={handleInputChange} data-id="Name" required></lightning-input>
+            <lightning-combobox label="Rating" value={rating} options={ratingOptions} onchange={handleInputChange} data-id="Rating"></lightning-combobox>
+            <div class="slds-p-top_medium">
+                <div class="slds-align_absolute-center">
+            <lightning-button variant="brand" label="Create Account" onclick={handleCreateAccount}></lightning-button>
+        </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Get Record Using lightning/uiRecordApi" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <lightning-spinner if:true={isLoading} alternative-text="Loading"></lightning-spinner>
+            <template if:true={account}>
+                <p><strong>Name:</strong> {account.fields.Name.value}</p>
+                <p><strong>Account Industry:</strong> {account.fields.Industry.value}</p>
+                <p><strong>Account Rating:</strong> {account.fields.Rating.value}</p>
+            </template>
+            <template if:true={error}>
+                <p class="slds-text-color_error">{error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
