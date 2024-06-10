@@ -1,0 +1,7 @@
+.slds-modal__container {
+    width: 50%;
+    max-width: 40rem;
+}
+.account-name {
+    margin-right: 10px; 
+}

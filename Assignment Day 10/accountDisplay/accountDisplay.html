@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title = "Accounts">
+        <div class="slds-m-around_medium">
+            <template if:true={accounts}>
+        <ul>
+            <template for:each={accounts} for:item="account">
+                <li key={account.Id}>
+                    <span class="account-name">{account.Name}</span>
+                    <button class="show-button" data-id={account.Id} onclick={handleShowDetails}>Show</button>
+                </li><br key={account.Id}>
+            </template>
+        </ul>
+
+    </template>
+        </div>
+    </lightning-card>
+
+    <template if:true={showModal}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleCloseModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium">Account Details</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <p><strong>Name:</strong> {selectedAccount.Name}</p>
+                    <p><strong>Phone:</strong> {selectedAccount.Phone}</p>
+                    <p><strong>Industry:</strong> {selectedAccount.Industry}</p>
+                    <p><strong>Type:</strong> {selectedAccount.Type}</p>
+                    <p><strong>Rating:</strong> {selectedAccount.Rating}</p>
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={handleCloseModal}>Close</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>
